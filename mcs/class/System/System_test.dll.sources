@@ -1,3 +1,4 @@
+../../../build/common/Assertion.cs
 ../../../build/common/Consts.cs
 Microsoft.CSharp/CodeGeneratorFromCompileUnitTest.cs
 Microsoft.CSharp/CodeGeneratorFromExpressionTest.cs

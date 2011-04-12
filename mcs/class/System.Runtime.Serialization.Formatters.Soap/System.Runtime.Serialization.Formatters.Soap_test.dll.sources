@@ -1,3 +1,4 @@
+../../../build/common/Assertion.cs
 AssemblyInfo.cs
 SoapFormatterTest.cs
 SerializationTest.cs

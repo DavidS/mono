@@ -1,3 +1,4 @@
+../../../build/common/Assertion.cs
 System.Xml/NameTableTests.cs
 System.Xml/XmlAssert.cs
 System.Xml/XmlAttributeCollectionTests.cs

@@ -1,3 +1,4 @@
+../../../build/common/Assertion.cs
 Mono.Math/ArithmeticBigTest.cs
 Mono.Math/BigIntegerTest.cs
 Mono.Math/BigIntegerSetTest.cs

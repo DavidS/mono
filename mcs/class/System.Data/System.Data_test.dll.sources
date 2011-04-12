@@ -1,3 +1,4 @@
+../../../build/common/Assertion.cs
 System.Data.Test.Utils/DataProvider.cs
 System.Data.SqlTypes/SqlBinaryTest.cs
 System.Data.SqlTypes/SqlBooleanTest.cs

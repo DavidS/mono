@@ -41,7 +41,7 @@ ifndef NO_TEST
 $(test_nunit_dep): $(topdir)/build/deps/nunit-$(PROFILE).stamp
 	@if test -f $@; then :; else rm -f $<; $(MAKE) $<; fi
 $(topdir)/build/deps/nunit-$(PROFILE).stamp:
-	cd ${topdir}/nunit24 && $(MAKE)
+	cd ${topdir}/nunit26 && $(MAKE)
 	echo "stamp" >$@
 tests_CLEAN_FILES += $(topdir)/build/deps/nunit-$(PROFILE).stamp
 endif
