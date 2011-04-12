@@ -1,0 +1,7 @@
+../../CommonAssemblyInfo.cs
+AssemblyRunner.cs
+PlatformInfo.cs
+SnippetRunner.cs
+TestCompiler.cs
+TestLoadFixture.cs
+TestTree.cs

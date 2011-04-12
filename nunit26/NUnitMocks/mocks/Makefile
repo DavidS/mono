@@ -1,0 +1,28 @@
+thisdir = nunit26/NUnitMocks/mocks
+SUBDIRS = 
+include ../../../build/rules.make
+
+LIBRARY = nunit.mocks.dll
+LIBRARY_SNK = $(topdir)/nunit26/nunit.snk
+
+LOCAL_MCS_FLAGS= -debug -r:nunit.framework.dll -r:System.dll /d:StronglyNamedAssembly
+NO_TEST = yo
+
+ifneq (net_2_0, $(PROFILE))
+NO_INSTALL = yes
+install-local: install-symlink
+uninstall-local: uninstall-symlink
+endif
+
+EXTRA_DISTFILES = \
+	nunit.mocks.csproj
+
+include ../../../build/library.make
+
+symlinkdir = $(mono_libdir)/mono/$(FRAMEWORK_VERSION)
+install-symlink:
+	$(MKINSTALLDIRS) $(DESTDIR)$(symlinkdir)
+	cd $(DESTDIR)$(symlinkdir) && rm -f $(LIBRARY_NAME) && ln -s ../2.0/$(LIBRARY_NAME) $(LIBRARY_NAME)
+
+uninstall-symlink:
+	rm -f $(DESTDIR)$(symlinkdir)/$(LIBRARY_NAME)
