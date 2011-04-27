@@ -11,6 +11,8 @@ LIB_MCS_FLAGS += -d:NET_3_0
 endif
 ifeq (4.0, $(FRAMEWORK_VERSION))
 LIB_MCS_FLAGS += -d:NET_4_0 -r:System.Xaml.dll
+TEST_MCS_FLAGS += -r:System.Xaml.dll
 endif
+
 
 include ../../build/library.make
