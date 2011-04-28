@@ -351,16 +351,17 @@ namespace MonoTests.System.Resources
 		[Test]
 		public void AddResource_Stream_Default ()
 		{
+			string resourceFile = "Test/resources/AddResource_Stream.resources";
 			MemoryStream stream = new MemoryStream ();
 			byte [] buff = Encoding.Unicode.GetBytes ("Miguel");
 			stream.Write (buff, 0, buff.Length);
 			stream.Position = 0;
 
-			ResourceWriter rw = new ResourceWriter ("Test/resources/AddResource_Stream.resources");
+			ResourceWriter rw = new ResourceWriter (resourceFile);
 			rw.AddResource ("Name", (object)stream);
 			rw.Close ();
 
-			ResourceReader rr = new ResourceReader ("TestResources.resources");
+			ResourceReader rr = new ResourceReader (resourceFile);
 			IDictionaryEnumerator enumerator = rr.GetEnumerator ();
 
 			// Get the first element
