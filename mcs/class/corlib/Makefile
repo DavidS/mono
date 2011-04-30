@@ -99,7 +99,7 @@ test-vts:
 		$(vtsdir)/$(vts)TestLib/6.0/Address.cs
 run-test-vts: test-vts
 	$(TEST_RUNTIME) $(RUNTIME_FLAGS) $(TEST_HARNESS) -noshadow \
-		$(vtsdir)/BinarySerializationOverVersions.exe || true # ignore errors
+		$(vtsdir)/BinarySerializationOverVersions.exe && echo RESULT=true || echo RESULT=false
 test: test-vts
 run-test: run-test-vts
 

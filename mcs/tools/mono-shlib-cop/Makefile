@@ -22,7 +22,7 @@ cleanup:
 run-test-local: run-mono-shlib-cop-test
 
 run-mono-shlib-cop-test: $(PROGRAM) $(TEST_INPUT)
-	$(RUNTIME) $(PROGRAM) $(TEST_INPUT) | diff - test.dll.out
+	$(RUNTIME) $(PROGRAM) $(TEST_INPUT) | diff - test.dll.out | tee errors && echo RESULT=true || echo RESULT=false
 
 $(TEST_INPUT) : test.cs
 	$(CSCOMPILE) -target:library $< -out:$@
