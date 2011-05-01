@@ -63,7 +63,7 @@ build-compiler-lib:
 qcheck: build-compiler-lib qcheck2
 	
 qcheck2:
-	$(TESTER) -mode:pos -files:$(TEST_PATTERN) -compiler:$(COMPILER) -issues:known-issues-$(PROFILE) -log:$(PROFILE).log -il:ver-il-$(PROFILE).xml $(DEFINES) $(TOPTIONS)
+	$(TESTER) -mode:pos -files:$(TEST_PATTERN) -compiler:$(COMPILER) -issues:known-issues-$(PROFILE) -log:$(PROFILE).log -il:ver-il-$(PROFILE).xml $(DEFINES) $(TOPTIONS) && echo RESULT=true || echo RESULT=false
 
 test-local:
 	@:

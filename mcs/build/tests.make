@@ -85,7 +85,7 @@ endif
 run-test-lib: test-local
 	ok=:; \
 	PATH="$(TEST_RUNTIME_WRAPPERS_PATH):$(PATH)" MONO_REGISTRY_PATH="$(HOME)/.mono/registry" MONO_TESTS_IN_PROGRESS="yes" $(TEST_RUNTIME) $(RUNTIME_FLAGS) $(TEST_HARNESS) $(test_assemblies) -noshadow $(TEST_HARNESS_FLAGS) $(LOCAL_TEST_HARNESS_FLAGS) $(TEST_HARNESS_EXCLUDES) $(TEST_HARNESS_OUTPUT) -xml=TestResult-$(PROFILE).xml $(FIXTURE_ARG) $(TESTNAME_ARG)|| ok=false; \
-	$(TEST_HARNESS_POSTPROC) ; $$ok
+	$(TEST_HARNESS_POSTPROC) ; echo RESULT=$$ok
 
 ## Instructs compiler to compile to target .net execution, it can be usefull in rare cases when runtime detection is not possible
 run-test-ondotnet-lib: LOCAL_TEST_COMPILER_ONDOTNET_FLAGS:=-d:RUN_ONDOTNET

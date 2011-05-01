@@ -114,7 +114,7 @@ $(vtsdir)/BinarySerializationOverVersions.exe: $(vtsdir)/BinarySerializationOver
 run-test-vts: test-vts
 	@echo Running vts tests...
 	$(TEST_RUNTIME) $(RUNTIME_FLAGS) $(TEST_HARNESS) -noshadow \
-		$(vtsdir)/BinarySerializationOverVersions.exe 
+		$(vtsdir)/BinarySerializationOverVersions.exe && echo RESULT=true || echo RESULT=false
 test: test-vts
 run-test: run-test-vts
 

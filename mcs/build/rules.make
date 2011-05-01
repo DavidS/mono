@@ -127,7 +127,7 @@ STD_TARGETS = test run-test run-test-ondotnet clean install uninstall doc-update
 $(STD_TARGETS): %: do-%
 
 do-run-test:
-	ok=:; $(MAKE) run-test-recursive || ok=false; $(MAKE) run-test-local || ok=false; $$ok
+	ok=:; $(MAKE) run-test-recursive || ok=false; $(MAKE) run-test-local || ok=false; echo RESULT=$$ok
 
 do-%: %-recursive
 	$(MAKE) $*-local
